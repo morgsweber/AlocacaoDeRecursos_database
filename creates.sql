@@ -70,3 +70,13 @@ CREATE TABLE turma_sala
  CONSTRAINT FK_49 FOREIGN KEY ( sala_id ) REFERENCES sala ( sala_id),
  CONSTRAINT PK_turma_sala PRIMARY KEY (dia, horario, sala_id)
 );
+
+CREATE TABLE pedido
+(
+  pedido_id int,
+  professor_id int,
+  sala_id int,
+  nova_sala_id int,
+  CONSTRAINT PK_pedido PRIMARY KEY (pedido_id,professor_id)
+);
+
