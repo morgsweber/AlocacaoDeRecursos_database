@@ -77,6 +77,6 @@ CREATE TABLE pedido
   professor_id int,
   sala_id int,
   nova_sala_id int,
+  justificativa varchar(100),
   CONSTRAINT PK_pedido PRIMARY KEY (pedido_id,professor_id)
 );
-
