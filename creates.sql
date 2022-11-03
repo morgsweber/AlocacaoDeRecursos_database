@@ -49,14 +49,14 @@ CREATE TABLE turma_aluno
 
 CREATE TABLE ministra
 (
+ ministra_id serial primary key,
  professor_id int,
  turma_id   int,
  disciplina_id int,
  CONSTRAINT FK_21 FOREIGN KEY ( professor_id ) REFERENCES professor ( professor_id ),
  CONSTRAINT FK_6 FOREIGN KEY ( turma_id ) REFERENCES turma ( turma_id ),
  CONSTRAINT FK_22 FOREIGN KEY ( disciplina_id ) REFERENCES disciplina ( disciplina_id ),
- CONSTRAINT PK_ministra PRIMARY KEY (professor_id, turma_id, disciplina_id)
- 
+ CONSTRAINT UK_ministra UNIQUE (turma_id, disciplina_id)
 );
 
 CREATE TABLE turma_sala
