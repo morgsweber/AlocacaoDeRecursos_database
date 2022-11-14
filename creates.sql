@@ -61,6 +61,7 @@ CREATE TABLE ministra
 
 CREATE TABLE turma_sala
 (
+  turma_sala_id serial primary key,
   turma_id int,
   sala_id  int,
   descricao varchar(100),
@@ -68,7 +69,7 @@ CREATE TABLE turma_sala
   dia date NOT NULL,
  CONSTRAINT FK_81 FOREIGN KEY ( turma_id ) REFERENCES turma ( turma_id ),
  CONSTRAINT FK_49 FOREIGN KEY ( sala_id ) REFERENCES sala ( sala_id),
- CONSTRAINT PK_turma_sala PRIMARY KEY (dia, horario, sala_id)
+ CONSTRAINT UK_turma_sala UNIQUE (dia, horario, sala_id)
 );
 
 CREATE TABLE pedido
